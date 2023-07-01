@@ -94,10 +94,10 @@ console.log("isValueNaN(100)", isValueNaN(100)); // Виведе "The value is n
 function createURLObject(urlStr) {
   // Використовуємо вбудований конструктор URL, щоб створити новий об'єкт URL з введеного рядка.
   // Повертаємо створений об'єкт URL.
-  const url = encodeURI(urlStr);
+  const urlObj = new URL(urlStr);
   //let obj = { URL: url };
   //console.log(obj);
-  return url; // obj
+  return urlObj; // obj
 }
 // Виконуємо функцію з вхідними даними і виводимо результат.
 console.log("Завдання 6 ====================================");
@@ -108,6 +108,7 @@ console.log('createURLObject("https://example.com")', createURLObject("https://e
 // Задача 7: Напишіть функцію, яка кодує комп онент URL.
 // Створюємо функцію з назвою encodeURLComponent, яка приймає один аргумент - urlComponent
 function encodeURLComponent(urlComponent) {
+  return encodeURIComponent(urlComponent);
   // Використовуємо вбудовану функцію encodeURIComponent, щоб закодувати введений компонент URL.
   // Ця функція повертає закодований компонент URL, замінивши небезпечні символи на їх процентне кодування.
   // Повертаємо закодований компонент URL.
@@ -120,14 +121,13 @@ console.log('encodeURLComponent("Hello World!")', encodeURLComponent("Hello Worl
 //
 
 // Задача 8: Напишіть функцію, яка кодує URL.
-
 // Створюємо функцію з назвою encodeURL, яка приймає один аргумент - url
 function encodeURL(url) {
+  return encodeURI(url);
   // Використовуємо вбудовану функцію encodeURI, щоб закодувати введений URL.
   // Ця функція повертає закодований URL, замінивши небезпечні символи на їх процентне кодування.
   // Повертаємо закодований URL.
 }
-
 // Виконуємо функцію з вхідними даними і виводимо результат.
 console.log("Завдання 8 ====================================");
 console.log('encodeURL("https://ex ample.com")', encodeURL("https://ex ample.com")); // Виведе "https://ex%20ample.com"
@@ -135,14 +135,13 @@ console.log('encodeURL("https://ex ample.com")', encodeURL("https://ex ample.com
 //
 
 // Задача 9: Напишіть функцію, яка декодує закодований компонент URL.
-
 // Створюємо функцію з назвою decodeURLComponent, яка приймає один аргумент - urlComponent
 function decodeURLComponent(urlComponent) {
   // Використовуємо вбудовану функцію decodeURIComponent, щоб декодувати введений закодований компонент URL.
   // Ця функція повертає декодований компонент URL, замінивши процентне кодування символів на їх реальні значення.
   // Повертаємо декодований компонент URL.
+  return decodeURIComponent(urlComponent);
 }
-
 // Виконуємо функцію з вхідними даними і виводимо результат.
 console.log("Завдання 9 ====================================");
 console.log('decodeURLComponent("Hello%20World%21")', decodeURLComponent("Hello%20World%21")); // Виведе "Hello World!"
@@ -156,6 +155,7 @@ function decodeURL(url) {
   // Використовуємо вбудовану функцію decodeURI, щоб декодувати введений закодований URL.
   // Ця функція повертає декодований URL, замінивши процентне кодування символів на їх реальні значення.
   // Повертаємо декодований URL.
+  return decodeURI(url);
 }
 
 // Виконуємо функцію з вхідними даними і виводимо результат.
